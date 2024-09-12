@@ -55,7 +55,9 @@ void drawFirstPart(int x, int y, int length) {
 void drawTruc(int x, int y, int length) {
   int offset = length / 2;
   fill(214, 0, 255);
-  quad(x + offset, y, x - offset, y + offset, x, y + offset * 3 / 2, x + offset, y + offset);
+  rect(x + offset, y, -2 * offset, offset / 2);
+  quad(x - offset, y, x - offset * 5 / 4, y + offset / 2, x - offset / 2, y + offset, x + offset / 4, y + offset * 4 / 5);
+  quad(x + offset, y, x - offset / 2, y + offset, x, y + offset * 3 / 2, x + offset * 4 / 3, y + offset / 2);
 }
 
 void drawSecondPart(int x, int y, int length) {
@@ -64,8 +66,9 @@ void drawSecondPart(int x, int y, int length) {
   quad(x - offset, y, x - offset * 3 / 2 , y + length , x + offset * 3 / 2, y + length, x + offset, y);
 }
 
-void drawLegs() {
-
+void drawFeet(int x, int y, int offset, int width, int height) {
+  ellipse(x - offset, y + offset, width, height);
+  ellipse(x + offset, y + offset, width, height);
 }
 
 void drawArms() {
