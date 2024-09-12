@@ -55,7 +55,7 @@ void drawFirstPart(int x, int y, int length) {
 void drawTruc(int x, int y, int length) {
   int offset = length / 2;
   fill(214, 0, 255);
-  quad(x + offset, y, x - offset, y + offset, x, y + offset, x + offset, y + offset);
+  quad(x + offset, y, x - offset, y + offset, x, y + offset * 3 / 2, x + offset, y + offset);
 }
 
 void drawSecondPart(int x, int y, int length) {
