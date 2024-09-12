@@ -4,9 +4,10 @@ void setup() {
 }
 
 void draw() {
-  int radius = 100, faceX = 300, faceY = 100;
+  int radius = 100, x = 300, y = 100, length = 75;
   //drawHead(radius, faceX, faceY);
-  drawBody(faceX, faceY + radius / 2);
+  drawFeet(x, y + radius / 2 + 8 * length / 6, 50, 20, 40);
+  drawBody(x, y + radius / 2, length);
 }
 
 void drawHead(int radius, int x, int y) {
@@ -40,8 +41,7 @@ void drawEyes(int x, int y, int radiusFace, int offset) {
   ellipse(x + offset, y - offset, radius, radius);
 }
 
-void drawBody(int x, int y) {
-  int length = 75;
+void drawBody(int x, int y, int length) {
   drawFirstPart(x, y, length);
   drawSecondPart(x, y + length, length);
 }
@@ -67,6 +67,7 @@ void drawSecondPart(int x, int y, int length) {
 }
 
 void drawFeet(int x, int y, int offset, int width, int height) {
+  fill(0);
   ellipse(x - offset, y + offset, width, height);
   ellipse(x + offset, y + offset, width, height);
 }
